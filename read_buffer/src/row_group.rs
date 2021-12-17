@@ -1505,7 +1505,7 @@ impl<'a> TryFrom<&DFScalarValue> for Literal {
                 Some(v) => Ok(Self::String(v.clone())),
                 None => Err("NULL literal not supported".to_owned()),
             },
-            DFScalarValue::TimestampNanosecond(v) => match v {
+            DFScalarValue::TimestampNanosecond(v, None) => match v {
                 Some(v) => Ok(Self::Integer(*v)),
                 None => Err("NULL literal not supported".to_owned()),
             },
@@ -4089,7 +4089,7 @@ west,host-c,pro,10,6
                 // a = timestamp(100000)
                 col("a").eq(Expr::Literal(ScalarValue::TimestampNanosecond(Some(
                     1000000,
-                )))),
+                ), None))),
                 BinaryExpr::from(("a", "=", 1000000_i64)),
             ),
         ];
