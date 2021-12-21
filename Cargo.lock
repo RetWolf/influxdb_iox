@@ -3165,6 +3165,22 @@ dependencies = [
 ]
 
 [[package]]
+name = "query_log_replay"
+version = "0.1.0"
+dependencies = [
+ "arrow",
+ "bytes",
+ "clap",
+ "futures",
+ "generated_types",
+ "influxdb_iox_client",
+ "serde_json",
+ "structopt",
+ "tokio",
+ "workspace-hack",
+]
+
+[[package]]
 name = "query_tests"
 version = "0.1.0"
 dependencies = [

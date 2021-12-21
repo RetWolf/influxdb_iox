@@ -88,6 +88,11 @@ impl std::default::Default for Builder {
 }
 
 impl Builder {
+    /// Construct a new [`Builder`]
+    pub fn new() -> Self {
+        Default::default()
+    }
+
     /// Construct the [`Connection`] instance using the specified base URL.
     pub async fn build<D>(self, dst: D) -> Result<Connection>
     where

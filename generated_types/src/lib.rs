@@ -212,7 +212,7 @@ pub mod server_config;
 #[cfg(any(feature = "data_types_conversions", test))]
 pub mod write_buffer;
 
-pub use prost::{DecodeError, EncodeError};
+pub use prost::{self, DecodeError, EncodeError};
 
 #[cfg(test)]
 mod tests {

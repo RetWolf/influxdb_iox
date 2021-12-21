@@ -38,6 +38,7 @@ members = [
     "predicate",
     "query",
     "query_tests",
+    "query_log_replay",
     "read_buffer",
     "router",
     "schema",

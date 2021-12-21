@@ -1,0 +1,21 @@
+# This is in its own workspace to prevent it from being included in the overall iox workspace
+[package]
+name = "query_log_replay"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+arrow = { version = "6.0", features = ["prettyprint"] }
+bytes = "1.0"
+clap = "2.34.0"
+futures = "0.3"
+serde_json = "1.0"
+structopt = "0.3.25"
+tokio = { version = "1.13" }
+workspace-hack = { path = "../workspace-hack"}
+
+
+influxdb_iox_client = { path = "../influxdb_iox_client", features = ["flight"] }
+generated_types = { path = "../generated_types" }
